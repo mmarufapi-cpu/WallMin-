@@ -1,6 +1,110 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="16" fill="#111111"/>
-  <rect x="2" y="2" width="60" height="60" rx="14" stroke="#333333" stroke-width="2"/>
-  <path d="M14 44C20 44 24 20 32 20C40 20 44 44 50 44" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="32" cy="32" r="3" fill="#6366F1"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <!-- Screen inner cutout clip -->
+    <clipPath id="screenClip">
+      <rect x="94" y="104" width="324" height="216" rx="8" ry="8" />
+    </clipPath>
+
+    <!-- Wave Gradients -->
+    <linearGradient id="waveBlue" x1="94" y1="104" x2="418" y2="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1B78B6" />
+      <stop offset="50%" stop-color="#288EC8" />
+      <stop offset="100%" stop-color="#3FA6D8" />
+    </linearGradient>
+
+    <linearGradient id="waveCyan" x1="94" y1="130" x2="418" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1DA4B6" />
+      <stop offset="50%" stop-color="#2EB7BF" />
+      <stop offset="100%" stop-color="#49C5B7" />
+    </linearGradient>
+
+    <linearGradient id="waveGreen" x1="94" y1="160" x2="418" y2="270" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#55CD9E" />
+      <stop offset="50%" stop-color="#80D87E" />
+      <stop offset="100%" stop-color="#B8DF66" />
+    </linearGradient>
+
+    <linearGradient id="waveYellow" x1="94" y1="180" x2="418" y2="295" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F8C835" />
+      <stop offset="50%" stop-color="#FBB628" />
+      <stop offset="100%" stop-color="#F59E24" />
+    </linearGradient>
+
+    <linearGradient id="waveOrange" x1="94" y1="200" x2="418" y2="310" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EF7527" />
+      <stop offset="50%" stop-color="#E95428" />
+      <stop offset="100%" stop-color="#DD372B" />
+    </linearGradient>
+
+    <linearGradient id="waveCrimson" x1="94" y1="230" x2="418" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#B21C34" />
+      <stop offset="50%" stop-color="#8C132A" />
+      <stop offset="100%" stop-color="#6E0C20" />
+    </linearGradient>
+  </defs>
+
+  <!-- Laptop Display Bezel -->
+  <rect x="80" y="90" width="352" height="242" rx="16" ry="16" fill="#14253A" />
+
+  <!-- Display Screen with Harmonious Waves -->
+  <g clip-path="url(#screenClip)">
+    <!-- Base Wave 1: Sky Blue -->
+    <rect x="94" y="104" width="324" height="216" fill="url(#waveBlue)" />
+
+    <!-- Wave 2: Aqua / Cyan -->
+    <path d="M 94,180 
+             C 140,168 175,208 245,210 
+             C 310,212 342,162 388,165 
+             C 400,166 410,171 418,175 
+             L 418,320 L 94,320 Z" 
+          fill="url(#waveCyan)" />
+
+    <!-- Wave 3: Mint / Lime Green -->
+    <path d="M 94,208 
+             C 142,198 172,234 242,236 
+             C 308,238 340,192 388,196 
+             C 400,197 410,203 418,207 
+             L 418,320 L 94,320 Z" 
+          fill="url(#waveGreen)" />
+
+    <!-- Wave 4: Gold / Sun Yellow -->
+    <path d="M 94,234 
+             C 140,224 172,254 240,256 
+             C 305,258 340,218 388,222 
+             C 400,223 410,230 418,234 
+             L 418,320 L 94,320 Z" 
+          fill="url(#waveYellow)" />
+
+    <!-- Wave 5: Tangerine Orange -->
+    <path d="M 94,258 
+             C 140,248 172,274 238,276 
+             C 305,278 340,244 388,250 
+             C 400,251 410,258 418,262 
+             L 418,320 L 94,320 Z" 
+          fill="url(#waveOrange)" />
+
+    <!-- Wave 6: Deep Crimson / Ruby -->
+    <path d="M 94,282 
+             C 140,274 172,292 238,294 
+             C 305,296 340,270 388,276 
+             C 400,278 410,284 418,288 
+             L 418,320 L 94,320 Z" 
+          fill="url(#waveCrimson)" />
+  </g>
+
+  <!-- Laptop Base with Authentic Transparent Thumb Notch -->
+  <path d="M 68,332 
+           L 226,332 
+           C 230,332 233,338 238,338 
+           L 274,338 
+           C 279,338 282,332 286,332 
+           L 444,332 
+           C 453,332 457,338 453,346 
+           L 447,352 
+           C 442,357 435,360 426,360 
+           L 86,360 
+           C 77,360 70,357 65,352 
+           L 59,346 
+           C 55,338 59,332 68,332 Z" 
+        fill="#14253A" />
 </svg>
