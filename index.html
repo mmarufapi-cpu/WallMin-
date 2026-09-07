@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>WallMin — 4K Desktop &amp; iPhone Minimalist Wallpaper Generator</title>
   <meta name="description" content="Generate and download minimalist, aesthetic wallpapers in 4K Ultra HD for Mac/PC and custom resolutions for iPhone. Free, live customization and instant export." />
   <meta name="keywords" content="wallpaper generator, 4k wallpaper, iphone wallpaper, minimalist wallpaper, desktop wallpaper, aesthetic background, generative art, dark mode wallpaper" />
@@ -154,17 +154,18 @@
     .size-hint{margin-top:-4px;text-align:center;color:var(--muted);font-size:11px}
     .toast{position:fixed;z-index:50;left:50%;bottom:24px;transform:translate(-50%,20px);padding:10px 16px;border:1px solid var(--border);border-radius:999px;background:var(--card);box-shadow:0 8px 32px rgba(0,0,0,.35);font-size:13px;opacity:0;pointer-events:none;transition:.25s ease}
     .toast.show{opacity:1;transform:translate(-50%,0)}
-    #fullView{position:fixed;inset:0;z-index:100;background:#000}
+    #fullView{position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100vh;height:100dvh;min-height:0;max-height:100dvh;inset:0;z-index:100;background:#000;overflow:hidden;touch-action:none}
+    #fullView.active{display:block;animation:none}
     #fullCanvas{width:100%;height:100%;display:block;object-fit:cover}
-    .full-back{position:absolute;top:24px;left:24px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.5);color:#fff;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(10px);transition:var(--ease)}
-    .full-back:hover{background:rgba(0,0,0,.7)}
-    .full-pill{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:32px;padding:12px 12px 12px 24px;background:rgba(10,10,10,.85);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.08);border-radius:999px;color:#fff}
-    .full-info{display:flex;flex-direction:column;gap:4px}
-    .full-title{font-size:15px;font-weight:600}
-    .full-meta{display:flex;align-items:center;gap:12px;font-size:11px;color:rgba(255,255,255,.6)}
-    .full-meta span{display:flex;align-items:center;gap:6px}
-    .full-download{width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;cursor:pointer;transition:var(--ease)}
-    .full-download:hover{background:rgba(255,255,255,.25)}
+    .full-back{position:fixed;top:calc(20px + env(safe-area-inset-top, 0px));left:calc(20px + env(safe-area-inset-left, 0px));width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.65);color:#fff;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 4px 16px rgba(0,0,0,.35);transition:var(--ease);z-index:120}
+    .full-back:hover{background:rgba(0,0,0,.85)}
+    .full-pill{position:fixed;bottom:calc(32px + env(safe-area-inset-bottom, 0px));left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:24px;padding:10px 14px 10px 22px;background:rgba(12,12,12,.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.15);border-radius:999px;box-shadow:0 8px 32px rgba(0,0,0,.5),0 2px 8px rgba(0,0,0,.3);color:#fff;z-index:120}
+    .full-info{display:flex;flex-direction:column;gap:3px}
+    .full-title{font-size:14px;font-weight:600;white-space:nowrap}
+    .full-meta{display:flex;align-items:center;gap:12px;font-size:11px;color:rgba(255,255,255,.65);white-space:nowrap}
+    .full-meta span{display:flex;align-items:center;gap:5px}
+    .full-download{width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:#000;display:grid;place-items:center;cursor:pointer;transition:var(--ease);flex-shrink:0}
+    .full-download:hover{background:rgba(255,255,255,.85);transform:scale(1.05)}
     @media(max-width:1024px){
       nav{height:60px;padding:14px}
       .featured{height:62vh;min-height:430px}
@@ -177,17 +178,17 @@
       #previewDesktop{width:min(480px,100%);height:auto}
       #previewMobile{width:120px}
       .export-group{margin-top:0}
-      .full-pill{bottom:24px;gap:20px;padding:8px 8px 8px 20px}
+      .full-pill{bottom:calc(28px + env(safe-area-inset-bottom, 0px));gap:18px;padding:8px 12px 8px 18px}
       .full-download{width:36px;height:36px}
     }
     @media(max-width:640px){
-      .full-pill{bottom:20px;gap:14px;padding:6px 6px 6px 16px;max-width:calc(100vw - 32px);width:max-content}
-      .full-title{font-size:13px;line-height:1.2}
+      .full-pill{bottom:calc(20px + env(safe-area-inset-bottom, 14px));gap:12px;padding:8px 10px 8px 16px;max-width:calc(100vw - 28px);width:max-content}
+      .full-title{font-size:13px;line-height:1.2;font-weight:600}
       .full-meta{font-size:10px;gap:8px}
       .full-meta span{gap:4px}
-      .full-download{width:32px;height:32px;min-width:32px}
-      .full-download svg{width:14px;height:14px}
-      .full-back{top:16px;left:16px;width:38px;height:38px}
+      .full-download{width:36px;height:36px;min-width:36px;background:#fff;color:#000}
+      .full-download svg{width:16px;height:16px}
+      .full-back{top:calc(16px + env(safe-area-inset-top, 0px));left:calc(16px + env(safe-area-inset-left, 0px));width:40px;height:40px}
     }
   </style>
 </head>
@@ -352,6 +353,7 @@
       qs(".view.active").classList.remove("active");
       qs("#fullView").classList.add("active");
       qs("nav").style.display="none";
+      document.body.style.overflow="hidden";
       const c=qs("#fullCanvas");
       c.width=window.innerWidth;
       c.height=window.innerHeight;
@@ -359,11 +361,15 @@
       qs(".full-title").textContent=next&&next.title?next.title:(LABELS[pattern]+" "+PALETTES[palette].name);
       qs(".full-meta-text").textContent=LABELS[pattern]+" · "+PALETTES[palette].name;
       qs(".full-size-text").textContent=type==="mobile"?"1290×2796":"3840×2160";
+      const dlBtn=qs(".full-download");
+      dlBtn.setAttribute("aria-label","Download "+(type==="mobile"?"iPhone Wallpaper":"Desktop 4K Wallpaper"));
+      dlBtn.setAttribute("title","Download "+(type==="mobile"?"iPhone Wallpaper":"Desktop 4K Wallpaper"));
     }
     function closeFullView(){
       qs("#fullView").classList.remove("active");
       qs("#"+prevView).classList.add("active");
       qs("nav").style.display="flex";
+      document.body.style.overflow="";
       if(prevView==="createView"){syncControls();renderPreview();}
     }
     let resizeTimer;

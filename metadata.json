@@ -1,6 +1,6 @@
 {
   "name": "WallMin",
-  "description": "",
+  "description": "Generate and download minimalist, aesthetic wallpapers in 4K Ultra HD for Mac/PC and custom resolutions for iPhone.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
