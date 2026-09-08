@@ -194,6 +194,74 @@
       .full-download svg{width:16px;height:16px}
       .full-back{top:calc(16px + env(safe-area-inset-top, 0px));left:calc(16px + env(safe-area-inset-left, 0px));width:42px;height:42px}
     }
+
+    /* Draw Studio - Minimalist & Human-Crafted */
+    .draw-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;min-height:calc(100vh - 100px);padding:76px 24px 56px;max-width:1160px;margin:0 auto;align-items:start}
+    .draw-main{display:flex;flex-direction:column;gap:14px;min-width:0}
+    .draw-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:2px}
+    .draw-header-info{display:flex;flex-direction:column;gap:2px}
+    .draw-title{font-size:16px;font-weight:600;color:var(--text);margin:0;letter-spacing:-0.01em;line-height:1.2}
+    .draw-subtitle{font-size:12px;color:var(--muted);margin:0;font-weight:400}
+    .btn-draw-back{background:transparent;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:999px;font-size:12px;font-weight:500;display:inline-flex;align-items:center;gap:6px;cursor:pointer;transition:var(--ease)}
+    .btn-draw-back:hover{color:var(--text);background:var(--card);border-color:var(--muted)}
+    
+    .sketch-canvas-wrapper{display:flex;flex-direction:column;gap:12px}
+    .sketch-canvas-box{position:relative;width:100%;aspect-ratio:16/10;max-height:58vh;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#0d0d10;touch-action:none;cursor:crosshair;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+    #sketchCanvas{width:100%;height:100%;display:block}
+    .sketch-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--muted);pointer-events:none;transition:opacity .2s ease;text-align:center;padding:24px}
+    .sketch-placeholder.hidden{opacity:0;visibility:hidden}
+    .sketch-placeholder p{font-size:13px;font-weight:500;color:var(--text);margin:0 0 4px;opacity:.7}
+    .sketch-placeholder .sketch-hint{font-size:11px;color:var(--muted)}
+    
+    /* Tactile Floating Dock */
+    .sketch-dock{display:inline-flex;align-items:center;justify-content:center;align-self:center;flex-wrap:wrap;gap:6px;padding:5px 12px;background:var(--card);border:1px solid var(--border);border-radius:999px}
+    .dock-group{display:inline-flex;align-items:center;gap:4px}
+    .dock-sep{width:1px;height:14px;background:var(--border);margin:0 2px}
+    .dock-btn{width:30px;height:30px;border-radius:999px;border:0;background:transparent;color:var(--muted);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--ease);padding:0}
+    .dock-btn:hover{color:var(--text);background:var(--hover)}
+    .dock-btn.active{color:var(--bg);background:var(--text)}
+    .size-dot-btn{width:26px;height:26px;border-radius:999px;border:0;background:transparent;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:var(--ease)}
+    .size-dot-btn .dot{border-radius:50%;background:var(--muted);display:block;transition:var(--ease)}
+    .size-dot-btn:hover .dot{background:var(--text)}
+    .size-dot-btn.active .dot{background:var(--text);transform:scale(1.25)}
+    .preset-pill{border:0;background:transparent;color:var(--muted);font-size:11px;padding:3px 8px;border-radius:999px;cursor:pointer;transition:var(--ease)}
+    .preset-pill:hover{color:var(--text);background:var(--hover)}
+    .dock-caption{font-size:11px;color:var(--muted);margin-left:2px}
+    
+    /* Clean AI Sidebar */
+    .draw-sidebar{display:flex;flex-direction:column;gap:18px;padding-top:40px}
+    .draw-panel{display:flex;flex-direction:column;gap:14px}
+    .ai-sketch-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px}
+    .ai-magic-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--text);padding:3px 9px;border-radius:999px;background:var(--hover);border:1px solid var(--border);width:fit-content}
+    .ai-card-desc{font-size:12px;color:var(--muted);line-height:1.5;margin:0}
+    
+    .btn-create-wallpaper{width:100%;padding:11px 16px;border:0;border-radius:999px;background:var(--text);color:var(--bg);font-size:12px;font-weight:600;letter-spacing:.3px;cursor:pointer;transition:var(--ease);display:flex;align-items:center;justify-content:center;gap:6px}
+    .btn-create-wallpaper:hover{opacity:.88;transform:translateY(-1px)}
+    .btn-create-wallpaper:active{transform:scale(0.98)}
+    
+    /* Result Section */
+    .draw-result-box{display:flex;flex-direction:column;gap:10px;padding-top:4px;animation:viewEnter .3s ease forwards}
+    .result-header{display:flex;align-items:center;justify-content:space-between}
+    .result-hint{font-size:10px;color:var(--muted)}
+    .ai-decision-pill{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text);background:var(--card);border:1px solid var(--border);padding:6px 12px;border-radius:999px}
+    .ai-pill-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;flex-shrink:0;box-shadow:0 0 8px rgba(34,197,94,.6)}
+    .draw-result-preview-wrap{position:relative;width:100%;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:#000;cursor:pointer}
+    #sketchResultPreview{width:100%;height:auto;aspect-ratio:16/9;display:block}
+    .preview-hover-tag{position:absolute;bottom:6px;right:6px;display:flex;align-items:center;gap:4px;padding:3px 8px;border-radius:999px;background:rgba(0,0,0,.7);color:#fff;font-size:10px;backdrop-filter:blur(6px);opacity:.85;transition:var(--ease)}
+    .draw-result-preview-wrap:hover .preview-hover-tag{opacity:1;background:#000}
+    
+    .result-downloads{display:flex;flex-direction:column;gap:6px}
+    .btn-dl-item{display:flex;align-items:center;gap:10px;width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:var(--card);color:var(--text);cursor:pointer;transition:var(--ease);text-align:left}
+    .btn-dl-item:hover{background:var(--hover);border-color:var(--muted)}
+    .btn-dl-item svg{color:var(--muted);flex-shrink:0}
+    .dl-title{display:block;font-size:11px;font-weight:600;color:var(--text);line-height:1.2}
+    .dl-dim{display:block;font-size:9px;color:var(--muted);line-height:1}
+    
+    @media(max-width:960px){
+      .draw-layout{grid-template-columns:1fr;padding:64px 16px 36px;gap:20px}
+      .draw-sidebar{padding-top:0}
+      .sketch-dock{width:100%;justify-content:space-between;border-radius:14px}
+    }
   </style>
 </head>
 <body>
@@ -205,6 +273,9 @@
       </button>
       <button class="nav-tab" id="createTab" title="Create" aria-label="Create">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+      </button>
+      <button class="nav-tab" id="drawTab" title="Draw" aria-label="Draw to Wallpaper">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
       </button>
     </div>
     <div class="pill" id="themePill" aria-label="Theme">
@@ -273,12 +344,132 @@
             <button class="mode-btn active" id="btnDark"><span class="mode-icon mode-icon-dark"></span>Dark</button>
             <button class="mode-btn" id="btnLight"><span class="mode-icon mode-icon-light"></span>Light</button>
           </div></div>
-          <div class="control-group"><button class="btn-shuffle" id="btnShuffle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>GENERATE VARIATION</button></div>
+          <div class="control-group">
+            <button class="btn-shuffle" id="btnShuffle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>GENERATE VARIATION</button>
+            <button class="btn-shuffle" id="btnOpenDraw" style="margin-top:8px;border-color:rgba(255,255,255,0.22);background:linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02));font-weight:600;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>DRAW TO WALLPAPER</button>
+          </div>
           <div class="export-group">
             <button class="btn-export btn-desktop" id="btnDesktop"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="9" rx="1"/><path d="M5 15h6M8 12v3"/></svg>Download Desktop</button>
             <div class="size-hint">3840 × 2160 px</div>
             <button class="btn-export btn-mobile" id="btnMobile"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="1" width="8" height="14" rx="2"/><path d="M7.5 12.5h1"/></svg>Download iPhone</button>
             <div class="size-hint">1290 × 2796 px</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="drawView" class="view">
+      <h2 class="sr-only">Sketch Studio</h2>
+      <div class="draw-layout">
+        <div class="draw-main">
+          <div class="draw-header">
+            <button class="btn-draw-back" id="btnDrawBack" title="Back to Studio">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              <span>Back</span>
+            </button>
+            <div class="draw-header-info">
+              <h2 class="draw-title">Sketch Studio</h2>
+              <span class="draw-subtitle">Draw a few lines or curves. They will shape your wallpaper.</span>
+            </div>
+          </div>
+
+          <div class="sketch-canvas-wrapper">
+            <div class="sketch-canvas-box">
+              <canvas id="sketchCanvas" width="800" height="500"></canvas>
+              <div class="sketch-placeholder" id="sketchPlaceholder">
+                <p>Sketch your lines here</p>
+                <span class="sketch-hint">Try gentle hills, sea waves, or sweeping arcs</span>
+              </div>
+            </div>
+
+            <!-- Tactile Minimal Dock -->
+            <div class="sketch-dock" role="toolbar" aria-label="Drawing tools">
+              <div class="dock-group">
+                <button class="dock-btn active" id="toolBrush" title="Pen" aria-label="Pen tool">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4-14 14H4v-4L18 2z"/></svg>
+                </button>
+                <button class="dock-btn" id="toolEraser" title="Eraser" aria-label="Eraser tool">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/></svg>
+                </button>
+              </div>
+
+              <div class="dock-sep"></div>
+
+              <div class="dock-group" aria-label="Line weight">
+                <button class="size-dot-btn size-chip" data-size="4" title="Fine line">
+                  <span class="dot" style="width:4px;height:4px"></span>
+                </button>
+                <button class="size-dot-btn size-chip active" data-size="9" title="Medium line">
+                  <span class="dot" style="width:7px;height:7px"></span>
+                </button>
+                <button class="size-dot-btn size-chip" data-size="20" title="Broad line">
+                  <span class="dot" style="width:11px;height:11px"></span>
+                </button>
+              </div>
+
+              <div class="dock-sep"></div>
+
+              <div class="dock-group">
+                <button class="dock-btn" id="btnUndoSketch" title="Undo stroke" aria-label="Undo">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/></svg>
+                </button>
+                <button class="dock-btn" id="btnClearSketch" title="Clear canvas" aria-label="Clear">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar / Minimalist AI Synthesis -->
+        <aside class="draw-sidebar">
+          <div class="draw-panel">
+            <div class="ai-sketch-card">
+              <div class="ai-magic-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+                <span>AI Generator</span>
+              </div>
+              <p class="ai-card-desc">Draw anything freely on the canvas. AI analyzes your lines to determine the composition, style, and palette automatically.</p>
+              <button class="btn-create-wallpaper" id="btnGenerateFromSketch">
+                <span>Create Wallpaper</span>
+              </button>
+            </div>
+
+            <!-- Result Box -->
+            <div class="draw-result-box" id="drawResultBox" style="display:none;">
+              <div class="result-header">
+                <span class="control-label" style="margin-bottom:0">Created Wallpaper</span>
+                <span class="result-hint">Click to expand</span>
+              </div>
+              <div class="ai-decision-pill" id="aiDecisionPill">
+                <span class="ai-pill-dot"></span>
+                <span id="aiDecisionText">Interpreting sketch...</span>
+              </div>
+              <div class="draw-result-preview-wrap" id="btnPreviewFull" title="Click to view fullscreen">
+                <canvas id="sketchResultPreview" width="640" height="360" role="img" aria-label="Wallpaper Preview"></canvas>
+                <div class="preview-hover-tag">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span>Fullscreen</span>
+                </div>
+              </div>
+
+              <div class="result-downloads">
+                <button class="btn-dl-item" id="btnDownloadSketchDesktop">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                  <div>
+                    <span class="dl-title">Desktop 4K</span>
+                    <span class="dl-dim">3840 × 2160 px</span>
+                  </div>
+                </button>
+                <button class="btn-dl-item" id="btnDownloadSketchMobile">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                  <div>
+                    <span class="dl-title">iPhone</span>
+                    <span class="dl-dim">1290 × 2796 px</span>
+                  </div>
+                </button>
+              </div>
+            </div>
           </div>
         </aside>
       </div>
@@ -352,12 +543,14 @@
 
     const qs=s=>document.querySelector(s), toast=qs("#toast");
     function showToast(text){toast.textContent=text;toast.classList.add("show");clearTimeout(showToast.t);showToast.t=setTimeout(()=>toast.classList.remove("show"),1800)}
-    let prevView="homeView", fullType="desktop";
+    let prevView="homeView", fullType="desktop", isCustomSketch=false;
     function openFullView(next, type="desktop"){
       fullType=type;
-      if(next){pattern=next.pattern;palette=next.palette;inverted=next.inverted;if(next.seed)seed=next.seed;}
+      isCustomSketch=Boolean(next && next.isSketch);
+      if(next && !isCustomSketch){pattern=next.pattern;palette=next.palette;inverted=next.inverted;if(next.seed)seed=next.seed;}
       if(qs("#homeView").classList.contains("active")) prevView="homeView";
       else if(qs("#createView").classList.contains("active")) prevView="createView";
+      else if(qs("#drawView").classList.contains("active")) prevView="drawView";
       qs(".view.active").classList.remove("active");
       qs("#fullView").classList.add("active");
       qs("nav").style.display="none";
@@ -365,9 +558,15 @@
       const c=qs("#fullCanvas");
       c.width=window.innerWidth;
       c.height=window.innerHeight;
-      draw(c.getContext("2d"),c.width,c.height,pattern,palette,seed,inverted);
-      qs(".full-title").textContent=next&&next.title?next.title:(LABELS[pattern]+" "+PALETTES[palette].name);
-      qs(".full-meta-text").textContent=LABELS[pattern]+" · "+PALETTES[palette].name;
+      if(isCustomSketch){
+        renderSketchWallpaper(c.getContext("2d"), c.width, c.height, drawPalette, drawInverted, drawStyle, sketchSeed);
+        qs(".full-title").textContent="Sketch Wallpaper";
+        qs(".full-meta-text").textContent="Custom Draw · " + PALETTES[drawPalette].name;
+      } else {
+        draw(c.getContext("2d"),c.width,c.height,pattern,palette,seed,inverted);
+        qs(".full-title").textContent=next&&next.title?next.title:(LABELS[pattern]+" "+PALETTES[palette].name);
+        qs(".full-meta-text").textContent=LABELS[pattern]+" · "+PALETTES[palette].name;
+      }
       qs(".full-size-text").textContent=type==="mobile"?"1290×2796":"3840×2160";
       const dlBtn=qs(".full-download");
       dlBtn.setAttribute("aria-label","Download "+(type==="mobile"?"iPhone Wallpaper":"Desktop 4K Wallpaper"));
@@ -379,6 +578,7 @@
       qs("nav").style.display="flex";
       document.body.style.overflow="";
       if(prevView==="createView"){syncControls();renderPreview();}
+      else if(prevView==="drawView"){syncDrawControls();}
     }
     let resizeTimer;
     window.addEventListener('resize',()=>{
@@ -388,21 +588,567 @@
           const c=qs("#fullCanvas");
           c.width=window.innerWidth;
           c.height=window.innerHeight;
-          draw(c.getContext("2d"),c.width,c.height,pattern,palette,seed,inverted);
+          if(isCustomSketch){
+            renderSketchWallpaper(c.getContext("2d"), c.width, c.height, drawPalette, drawInverted, drawStyle, sketchSeed);
+          } else {
+            draw(c.getContext("2d"),c.width,c.height,pattern,palette,seed,inverted);
+          }
         }
       },150);
     });
 
     function setTheme(dark){document.documentElement.style.setProperty("--bg",dark?"#000":"#f0f0f0");document.documentElement.style.setProperty("--card",dark?"#151515":"#fff");document.documentElement.style.setProperty("--hover",dark?"#1e1e1e":"#e4e4e4");document.documentElement.style.setProperty("--text",dark?"#f0f0f0":"#111");document.documentElement.style.setProperty("--muted",dark?"#888":"#666");document.documentElement.style.setProperty("--border",dark?"#222":"#ddd");localStorage.setItem("wallmin-theme",dark?"dark":"light");qs("#themeDark").classList.toggle("active",dark);qs("#themeLight").classList.toggle("active",!dark);qs("#themeSlider").style.transform=dark?"translateX(0)":"translateX(47px)"}
-    function openCreate(next){qs(".view.active").classList.remove("active");qs("#createView").classList.add("active");qs("#homeTab").classList.remove("active");qs("#createTab").classList.add("active");qs("#navSlider").style.transform="translateX(57px)";if(next){pattern=next.pattern;palette=next.palette;inverted=next.inverted;if(next.seed)seed=next.seed;}syncControls();renderPreview();window.scrollTo(0,0)}
-    function openHome(){qs(".view.active").classList.remove("active");qs("#homeView").classList.add("active");qs("#createTab").classList.remove("active");qs("#homeTab").classList.add("active");qs("#navSlider").style.transform="translateX(0)";window.scrollTo(0,0)}
+    function openCreate(next){qs(".view.active").classList.remove("active");qs("#createView").classList.add("active");qs("#homeTab").classList.remove("active");qs("#drawTab").classList.remove("active");qs("#createTab").classList.add("active");qs("#navSlider").style.transform="translateX(57px)";if(next){pattern=next.pattern;palette=next.palette;inverted=next.inverted;if(next.seed)seed=next.seed;}syncControls();renderPreview();window.scrollTo(0,0)}
+    function openHome(){qs(".view.active").classList.remove("active");qs("#homeView").classList.add("active");qs("#createTab").classList.remove("active");qs("#drawTab").classList.remove("active");qs("#homeTab").classList.add("active");qs("#navSlider").style.transform="translateX(0)";window.scrollTo(0,0)}
     function renderPreview(){const d=qs("#previewDesktop"),m=qs("#previewMobile");draw(d.getContext("2d"),640,360,pattern,palette,seed,inverted);clock(d.getContext("2d"),640,360,"desktop",palette,inverted);draw(m.getContext("2d"),145,314,pattern,palette,seed,inverted);clock(m.getContext("2d"),145,314,"mobile",palette,inverted)}
     function syncControls(){document.querySelectorAll(".style-btn").forEach((b,i)=>b.classList.toggle("active",i===pattern));document.querySelectorAll(".palette-swatch").forEach((b,i)=>b.classList.toggle("active",i===palette));qs("#btnDark").classList.toggle("active",!inverted);qs("#btnLight").classList.toggle("active",inverted)}
     function download(w,h,name){const c=document.createElement("canvas");c.width=w;c.height=h;draw(c.getContext("2d"),w,h,pattern,palette,seed,inverted);c.toBlob(blob=>{const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);showToast("Wallpaper saved")}, "image/png")}
 
+    /* --- Draw to Wallpaper Studio Engine --- */
+    const sketchCanvas = qs("#sketchCanvas");
+    const sketchPlaceholder = qs("#sketchPlaceholder");
+    let sketchStrokes = [];
+    let currentStroke = null;
+    let isDrawing = false;
+    let drawTool = "brush";
+    let drawSize = 9;
+    let drawPalette = 0;
+    let drawInverted = false;
+    let drawStyle = "landscape";
+    let sketchSeed = 31415;
+    let hasGenerated = false;
+
+    function openDraw(){
+      qs(".view.active").classList.remove("active");
+      qs("#drawView").classList.add("active");
+      qs("#homeTab").classList.remove("active");
+      qs("#createTab").classList.remove("active");
+      qs("#drawTab").classList.add("active");
+      qs("#navSlider").style.transform="translateX(114px)";
+      drawPalette = palette;
+      drawInverted = inverted;
+      syncDrawControls();
+      initSketchCanvas();
+      window.scrollTo(0,0);
+    }
+
+    function initSketchCanvas(){
+      const box = sketchCanvas.parentElement;
+      const rect = box.getBoundingClientRect();
+      const w = Math.max(640, Math.round(rect.width || 800));
+      const h = Math.round(w * (5 / 8));
+      if(sketchCanvas.width !== w || sketchCanvas.height !== h){
+        sketchCanvas.width = w;
+        sketchCanvas.height = h;
+      }
+      redrawSketchCanvas();
+      checkPlaceholder();
+    }
+
+    function checkPlaceholder(){
+      const hasStrokes = sketchStrokes.some(s => s.points && s.points.length > 0);
+      sketchPlaceholder.classList.toggle("hidden", hasStrokes);
+    }
+
+    function redrawSketchCanvas(){
+      const ctx = sketchCanvas.getContext("2d");
+      const w = sketchCanvas.width;
+      const h = sketchCanvas.height;
+      ctx.clearRect(0, 0, w, h);
+
+      const isDarkTheme = !drawInverted;
+      ctx.fillStyle = isDarkTheme ? "#0a0a0c" : "#f4f4f5";
+      ctx.fillRect(0, 0, w, h);
+
+      ctx.fillStyle = isDarkTheme ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.06)";
+      const step = 28;
+      for(let x = step / 2; x < w; x += step){
+        for(let y = step / 2; y < h; y += step){
+          ctx.beginPath();
+          ctx.arc(x, y, 1.2, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      sketchStrokes.forEach(stroke => {
+        if(!stroke.points || stroke.points.length === 0) return;
+        ctx.save();
+        if(stroke.tool === "eraser"){
+          ctx.strokeStyle = isDarkTheme ? "#0a0a0c" : "#f4f4f5";
+          ctx.lineWidth = stroke.size * 2.5;
+        } else {
+          ctx.strokeStyle = isDarkTheme ? "#ffffff" : "#18181b";
+          ctx.lineWidth = stroke.size;
+          ctx.shadowColor = isDarkTheme ? "rgba(255,255,255,0.35)" : "rgba(0,0,0,0.2)";
+          ctx.shadowBlur = stroke.size * 0.5;
+        }
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+
+        const pts = stroke.points;
+        if(pts.length === 1){
+          ctx.beginPath();
+          ctx.arc(pts[0].x, pts[0].y, stroke.size / 2, 0, Math.PI * 2);
+          ctx.fillStyle = ctx.strokeStyle;
+          ctx.fill();
+        } else {
+          ctx.beginPath();
+          ctx.moveTo(pts[0].x, pts[0].y);
+          for(let i = 1; i < pts.length - 1; i++){
+            const xc = (pts[i].x + pts[i + 1].x) / 2;
+            const yc = (pts[i].y + pts[i + 1].y) / 2;
+            ctx.quadraticCurveTo(pts[i].x, pts[i].y, xc, yc);
+          }
+          ctx.lineTo(pts[pts.length - 1].x, pts[pts.length - 1].y);
+          ctx.stroke();
+        }
+        ctx.restore();
+      });
+    }
+
+    function getCanvasCoords(e){
+      const rect = sketchCanvas.getBoundingClientRect();
+      const scaleX = sketchCanvas.width / rect.width;
+      const scaleY = sketchCanvas.height / rect.height;
+      return {
+        x: (e.clientX - rect.left) * scaleX,
+        y: (e.clientY - rect.top) * scaleY
+      };
+    }
+
+    sketchCanvas.addEventListener("pointerdown", (e) => {
+      sketchCanvas.setPointerCapture(e.pointerId);
+      isDrawing = true;
+      const pt = getCanvasCoords(e);
+      currentStroke = { tool: drawTool, size: drawSize, points: [pt] };
+      sketchStrokes.push(currentStroke);
+      redrawSketchCanvas();
+      checkPlaceholder();
+    });
+
+    sketchCanvas.addEventListener("pointermove", (e) => {
+      if(!isDrawing || !currentStroke) return;
+      const pt = getCanvasCoords(e);
+      currentStroke.points.push(pt);
+      redrawSketchCanvas();
+    });
+
+    const finishStroke = () => {
+      if(isDrawing){
+        isDrawing = false;
+        currentStroke = null;
+        checkPlaceholder();
+      }
+    };
+    sketchCanvas.addEventListener("pointerup", finishStroke);
+    sketchCanvas.addEventListener("pointercancel", finishStroke);
+
+    function loadSketchPreset(type){
+      const sw = sketchCanvas.width || 800;
+      const sh = sketchCanvas.height || 500;
+      sketchStrokes = [];
+      if(type === "hills"){
+        sketchStrokes.push({
+          tool: "brush", size: 8,
+          points: [
+            {x: 0, y: sh*0.45}, {x: sw*0.22, y: sh*0.35}, {x: sw*0.5, y: sh*0.48}, {x: sw*0.78, y: sh*0.38}, {x: sw, y: sh*0.46}
+          ]
+        });
+        sketchStrokes.push({
+          tool: "brush", size: 9,
+          points: [
+            {x: 0, y: sh*0.65}, {x: sw*0.3, y: sh*0.55}, {x: sw*0.65, y: sh*0.68}, {x: sw, y: sh*0.6}
+          ]
+        });
+        sketchStrokes.push({
+          tool: "brush", size: 10,
+          points: [
+            {x: 0, y: sh*0.82}, {x: sw*0.4, y: sh*0.75}, {x: sw*0.75, y: sh*0.84}, {x: sw, y: sh*0.8}
+          ]
+        });
+      } else if(type === "waves"){
+        for(let i = 0; i < 4; i++){
+          const base = sh * (0.35 + i * 0.15);
+          const pts = [];
+          for(let s = 0; s <= 10; s++){
+            const x = (s / 10) * sw;
+            const y = base + Math.sin(s * 0.8 + i) * (sh * 0.06);
+            pts.push({ x, y });
+          }
+          sketchStrokes.push({ tool: "brush", size: 8, points: pts });
+        }
+      } else if(type === "arcs"){
+        const cx = sw * 0.5, cy = sh * 0.6;
+        for(let r = 0; r < 3; r++){
+          const rad = (r + 1) * (sh * 0.16);
+          const pts = [];
+          for(let a = 0; a <= 12; a++){
+            const ang = Math.PI * (1.15 + (a / 12) * 0.7);
+            pts.push({ x: cx + Math.cos(ang) * rad * 1.5, y: cy + Math.sin(ang) * rad });
+          }
+          sketchStrokes.push({ tool: "brush", size: 8, points: pts });
+        }
+      }
+      redrawSketchCanvas();
+      checkPlaceholder();
+      showToast("Preset loaded");
+    }
+
+    function renderSketchWallpaper(c, w, h, p, inv, style, s){
+      noiseSeed = s;
+      c.clearRect(0, 0, w, h);
+
+      const baseBg = bg(p, inv);
+      c.fillStyle = baseBg;
+      c.fillRect(0, 0, w, h);
+
+      const cx = w * 0.5;
+      const cy = h * 0.38;
+      const radG = c.createRadialGradient(cx, cy, 10, cx, cy, Math.max(w, h) * 0.72);
+      radG.addColorStop(0, color(p, 0.42, inv));
+      radG.addColorStop(0.55, color(p, 0.16, inv));
+      radG.addColorStop(1, baseBg);
+      c.fillStyle = radG;
+      c.fillRect(0, 0, w, h);
+
+      const sw = sketchCanvas.width || 800;
+      const sh = sketchCanvas.height || 500;
+
+      let strokes = sketchStrokes.filter(st => st.tool === "brush" && st.points && st.points.length > 1);
+
+      if(strokes.length === 0){
+        strokes = [
+          { points: [{x: sw*0.1, y: sh*0.4}, {x: sw*0.4, y: sh*0.3}, {x: sw*0.7, y: sh*0.5}, {x: sw*0.9, y: sh*0.35}] },
+          { points: [{x: sw*0.05, y: sh*0.6}, {x: sw*0.35, y: sh*0.5}, {x: sw*0.65, y: sh*0.7}, {x: sw*0.95, y: sh*0.55}] },
+          { points: [{x: 0, y: sh*0.78}, {x: sw*0.3, y: sh*0.72}, {x: sw*0.7, y: sh*0.82}, {x: sw, y: sh*0.75}] }
+        ];
+      }
+
+      const mapped = strokes.map(st => {
+        const pts = st.points.map(pt => ({
+          x: (pt.x / sw) * w,
+          y: (pt.y / sh) * h
+        }));
+        const avgY = pts.reduce((acc, pt) => acc + pt.y, 0) / pts.length;
+        return { pts, avgY, orig: st };
+      }).sort((a, b) => a.avgY - b.avgY);
+
+      if(style === "landscape"){
+        mapped.forEach((st, idx) => {
+          const t = (idx + 1) / (mapped.length + 1);
+          const pts = st.pts;
+          const layers = 3;
+          for(let ly = 0; ly < layers; ly++){
+            const layerT = Math.min(0.95, t + (ly / layers) * 0.28);
+            const dropOffset = ly * (h * 0.04);
+            c.beginPath();
+            c.moveTo(0, h);
+            c.lineTo(pts[0].x, pts[0].y + dropOffset);
+
+            for(let i = 0; i < pts.length - 1; i++){
+              const xc = (pts[i].x + pts[i + 1].x) / 2;
+              const yc = (pts[i].y + pts[i + 1].y) / 2 + dropOffset + fbm(i * 1.5 + ly * 2, 3) * (h * 0.008);
+              c.quadraticCurveTo(pts[i].x, pts[i].y + dropOffset, xc, yc);
+            }
+            c.lineTo(pts[pts.length - 1].x, pts[pts.length - 1].y + dropOffset);
+            c.lineTo(w, h);
+            c.closePath();
+            c.fillStyle = color(p, layerT, inv);
+            c.fill();
+          }
+
+          c.save();
+          c.beginPath();
+          c.moveTo(pts[0].x, pts[0].y);
+          for(let i = 0; i < pts.length - 1; i++){
+            const xc = (pts[i].x + pts[i + 1].x) / 2;
+            const yc = (pts[i].y + pts[i + 1].y) / 2;
+            c.quadraticCurveTo(pts[i].x, pts[i].y, xc, yc);
+          }
+          c.lineTo(pts[pts.length - 1].x, pts[pts.length - 1].y);
+          c.strokeStyle = color(p, Math.min(0.98, t * 0.9 + 0.1), inv);
+          c.lineWidth = Math.max(2, w * 0.0022);
+          c.shadowColor = color(p, 0.8, inv);
+          c.shadowBlur = Math.max(4, w * 0.005);
+          c.stroke();
+          c.restore();
+        });
+      } else if(style === "silk"){
+        mapped.forEach((st) => {
+          const pts = st.pts;
+          const ribbonCount = 12;
+          for(let rIdx = 0; rIdx < ribbonCount; rIdx++){
+            const ribT = rIdx / ribbonCount;
+            const offset = (rIdx - ribbonCount / 2) * (h * 0.012);
+            c.save();
+            c.beginPath();
+            c.moveTo(pts[0].x, pts[0].y + offset);
+            for(let i = 0; i < pts.length - 1; i++){
+              const waveOff = Math.sin(i * 0.6 + rIdx * 0.5 + s) * (h * 0.01);
+              const xc = (pts[i].x + pts[i + 1].x) / 2;
+              const yc = (pts[i].y + pts[i + 1].y) / 2 + offset + waveOff;
+              c.quadraticCurveTo(pts[i].x, pts[i].y + offset + waveOff, xc, yc);
+            }
+            c.lineTo(pts[pts.length - 1].x, pts[pts.length - 1].y + offset);
+            c.strokeStyle = color(p, 0.15 + ribT * 0.8, inv);
+            c.lineWidth = Math.max(1.5, w * 0.002);
+            c.globalAlpha = 0.82;
+            c.shadowColor = color(p, ribT, inv);
+            c.shadowBlur = Math.max(6, w * 0.004);
+            c.stroke();
+            c.restore();
+          }
+        });
+      } else {
+        mapped.forEach((st, idx) => {
+          const t = (idx + 1) / (mapped.length + 1);
+          const pts = st.pts;
+
+          c.save();
+          c.beginPath();
+          c.moveTo(pts[0].x, pts[0].y);
+          for(let i = 0; i < pts.length - 1; i++){
+            const xc = (pts[i].x + pts[i + 1].x) / 2;
+            const yc = (pts[i].y + pts[i + 1].y) / 2;
+            c.quadraticCurveTo(pts[i].x, pts[i].y, xc, yc);
+          }
+          c.lineTo(pts[pts.length - 1].x, pts[pts.length - 1].y);
+          c.strokeStyle = color(p, t * 0.7 + 0.2, inv);
+          c.lineWidth = Math.max(8, w * 0.014);
+          c.shadowColor = color(p, 0.9, inv);
+          c.shadowBlur = Math.max(20, w * 0.035);
+          c.stroke();
+          c.restore();
+
+          c.save();
+          c.beginPath();
+          c.moveTo(pts[0].x, pts[0].y);
+          for(let i = 0; i < pts.length - 1; i++){
+            const xc = (pts[i].x + pts[i + 1].x) / 2;
+            const yc = (pts[i].y + pts[i + 1].y) / 2;
+            c.quadraticCurveTo(pts[i].x, pts[i].y, xc, yc);
+          }
+          c.lineTo(pts[pts.length - 1].x, pts[pts.length - 1].y);
+          c.strokeStyle = inv ? "#ffffff" : color(p, 0.95, inv);
+          c.lineWidth = Math.max(2, w * 0.0035);
+          c.shadowColor = "#ffffff";
+          c.shadowBlur = Math.max(6, w * 0.008);
+          c.stroke();
+          c.restore();
+
+          let highestPt = pts[0];
+          pts.forEach(pt => { if(pt.y < highestPt.y) highestPt = pt; });
+          const flareRad = Math.max(14, w * 0.025);
+          const flareGrad = c.createRadialGradient(highestPt.x, highestPt.y, 2, highestPt.x, highestPt.y, flareRad);
+          flareGrad.addColorStop(0, "rgba(255,255,255,0.9)");
+          flareGrad.addColorStop(0.35, color(p, 0.85, inv));
+          flareGrad.addColorStop(1, "rgba(0,0,0,0)");
+          c.fillStyle = flareGrad;
+          c.beginPath();
+          c.arc(highestPt.x, highestPt.y, flareRad, 0, Math.PI * 2);
+          c.fill();
+        });
+      }
+
+      c.save();
+      const vig = c.createRadialGradient(w / 2, h / 2, Math.max(w, h) * 0.45, w / 2, h / 2, Math.max(w, h) * 0.85);
+      vig.addColorStop(0, "rgba(0,0,0,0)");
+      vig.addColorStop(1, inv ? "rgba(255,255,255,0.16)" : "rgba(0,0,0,0.48)");
+      c.fillStyle = vig;
+      c.fillRect(0, 0, w, h);
+      c.restore();
+    }
+
+    function downloadSketch(w, h, name){
+      const c = document.createElement("canvas");
+      c.width = w;
+      c.height = h;
+      renderSketchWallpaper(c.getContext("2d"), w, h, drawPalette, drawInverted, drawStyle, sketchSeed);
+      c.toBlob(blob => {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = name;
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+        showToast("Sketch wallpaper saved");
+      }, "image/png");
+    }
+
+    function syncDrawControls(){
+      redrawSketchCanvas();
+      if(hasGenerated){
+        renderSketchPreview();
+      }
+    }
+
+    function renderSketchPreview(){
+      const preview = qs("#sketchResultPreview");
+      renderSketchWallpaper(preview.getContext("2d"), 640, 360, drawPalette, drawInverted, drawStyle, sketchSeed);
+    }
+
+    // AI Sketch Intelligence Engine: Evaluates strokes and decides composition, style, and palette
+    function analyzeSketchAndSynthesize(){
+      const sw = sketchCanvas.width || 800;
+      const sh = sketchCanvas.height || 500;
+      const brushStrokes = sketchStrokes.filter(st => st.tool === "brush" && st.points && st.points.length > 1);
+
+      let style = "landscape";
+      let palIndex = 0;
+      let inverted = false;
+      let styleTitle = "Minimal Strata";
+      let moodName = "Obsidian Gold";
+
+      if(brushStrokes.length === 0){
+        style = "landscape";
+        palIndex = Math.floor(Math.random() * PALETTES.length);
+        styleTitle = "Organic Horizon";
+        moodName = PALETTES[palIndex].name;
+      } else {
+        let totalPts = 0;
+        let sumX = 0, sumY = 0;
+        let minX = sw, maxX = 0, minY = sh, maxY = 0;
+        let totalDx = 0, totalDy = 0;
+        let curvatureSum = 0;
+
+        brushStrokes.forEach(st => {
+          const pts = st.points;
+          totalPts += pts.length;
+          for(let i = 0; i < pts.length; i++){
+            const p = pts[i];
+            sumX += p.x; sumY += p.y;
+            if(p.x < minX) minX = p.x;
+            if(p.x > maxX) maxX = p.x;
+            if(p.y < minY) minY = p.y;
+            if(p.y > maxY) maxY = p.y;
+
+            if(i > 0){
+              totalDx += Math.abs(p.x - pts[i-1].x);
+              totalDy += Math.abs(p.y - pts[i-1].y);
+            }
+            if(i > 1){
+              const v1x = pts[i-1].x - pts[i-2].x, v1y = pts[i-1].y - pts[i-2].y;
+              const v2x = p.x - pts[i-1].x, v2y = p.y - pts[i-1].y;
+              curvatureSum += Math.abs(v1x * v2y - v1y * v2x);
+            }
+          }
+        });
+
+        const spanX = maxX - minX;
+        const spanY = maxY - minY;
+        const centerY = totalPts > 0 ? sumY / totalPts : sh * 0.5;
+        const ratioH = spanX / Math.max(1, spanY);
+
+        if(curvatureSum > 14000 || (brushStrokes.length <= 2 && spanX < sw * 0.55 && spanY < sh * 0.55)){
+          style = "luminous";
+          const luminousPals = [0, 1, 2, 5, 7];
+          palIndex = luminousPals[(brushStrokes.length + Math.round(centerY)) % luminousPals.length];
+          styleTitle = "Celestial Silhouette";
+        } else if(totalDx > totalDy * 1.5 && ratioH > 1.3){
+          style = "landscape";
+          const landscapePals = [0, 4, 6, 2, 1];
+          palIndex = landscapePals[Math.floor(Math.random() * landscapePals.length)];
+          styleTitle = centerY > sh * 0.55 ? "Valley Strata" : "Alpine Horizon";
+        } else {
+          style = "silk";
+          const silkPals = [3, 2, 5, 0, 7];
+          palIndex = silkPals[Math.floor(Math.random() * silkPals.length)];
+          styleTitle = "Flowing Contour Waves";
+        }
+
+        inverted = centerY < sh * 0.25 && Math.random() < 0.35;
+        moodName = PALETTES[palIndex].name;
+      }
+
+      drawStyle = style;
+      drawPalette = palIndex;
+      drawInverted = inverted;
+      sketchSeed = (Math.random() * 100000) | 0;
+
+      const decisionEl = qs("#aiDecisionText");
+      if(decisionEl){
+        decisionEl.innerHTML = `AI Decided: <strong>${styleTitle}</strong> • <strong>${moodName}</strong>`;
+      }
+    }
+
+    // Draw Tool Controls
+    qs("#toolBrush").onclick = () => {
+      drawTool = "brush";
+      qs("#toolBrush").classList.add("active");
+      qs("#toolEraser").classList.remove("active");
+    };
+    qs("#toolEraser").onclick = () => {
+      drawTool = "eraser";
+      qs("#toolEraser").classList.add("active");
+      qs("#toolBrush").classList.remove("active");
+    };
+
+    document.querySelectorAll(".size-chip").forEach(chip => {
+      chip.onclick = () => {
+        document.querySelectorAll(".size-chip").forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        drawSize = parseInt(chip.dataset.size, 10) || 9;
+      };
+    });
+
+    qs("#btnUndoSketch").onclick = () => {
+      if(sketchStrokes.length > 0){
+        sketchStrokes.pop();
+        redrawSketchCanvas();
+        checkPlaceholder();
+        if(hasGenerated){
+          analyzeSketchAndSynthesize();
+          renderSketchPreview();
+        }
+      }
+    };
+
+    qs("#btnClearSketch").onclick = () => {
+      sketchStrokes = [];
+      redrawSketchCanvas();
+      checkPlaceholder();
+      showToast("Canvas cleared");
+    };
+
+    // GENERATE BUTTON - AI DECISION
+    qs("#btnGenerateFromSketch").onclick = () => {
+      const genBtn = qs("#btnGenerateFromSketch");
+      const originalHtml = genBtn.innerHTML;
+      genBtn.innerHTML = `<span>AI Designing...</span>`;
+      genBtn.style.opacity = "0.7";
+      genBtn.disabled = true;
+
+      setTimeout(() => {
+        analyzeSketchAndSynthesize();
+        hasGenerated = true;
+        renderSketchPreview();
+        qs("#drawResultBox").style.display = "flex";
+        genBtn.innerHTML = originalHtml;
+        genBtn.style.opacity = "";
+        genBtn.disabled = false;
+        showToast("Wallpaper created from your sketch");
+        qs("#drawResultBox").scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }, 300);
+    };
+
+    qs("#btnDownloadSketchDesktop").onclick = () => downloadSketch(3840, 2160, "wallmin-sketch-4k.png");
+    qs("#btnDownloadSketchMobile").onclick = () => downloadSketch(1290, 2796, "wallmin-sketch-iphone.png");
+    qs("#btnPreviewFull").onclick = () => openFullView({ isSketch: true, title: "Sketch to Wallpaper" }, "desktop");
+
+    qs("#btnOpenDraw").onclick = () => openDraw();
+    qs("#drawTab").onclick = () => openDraw();
+    qs("#btnDrawBack").onclick = () => openCreate();
+
     qs("#themeDark").onclick=()=>setTheme(true);qs("#themeLight").onclick=()=>setTheme(false);qs("#homeTab").onclick=openHome;qs("#createTab").onclick=()=>openCreate();qs("#heroCreate").onclick=()=>openFullView({pattern:1,palette:6,inverted:true,title:"Toxic Wave",seed:3141});
     qs(".full-back").onclick=closeFullView;
-    qs(".full-download").onclick=()=>{if(fullType==="mobile")download(1290,2796,"wallmin-iphone.png");else download(3840,2160,"wallmin-desktop-4k.png");};
+    qs(".full-download").onclick=()=>{
+      if(isCustomSketch){
+        if(fullType==="mobile") downloadSketch(1290, 2796, "wallmin-sketch-iphone.png");
+        else downloadSketch(3840, 2160, "wallmin-sketch-4k.png");
+      } else {
+        if(fullType==="mobile") download(1290,2796,"wallmin-iphone.png");
+        else download(3840,2160,"wallmin-desktop-4k.png");
+      }
+    };
     qs("#previewDesktop").onclick=()=>openFullView(null, "desktop");
     qs("#previewMobile").onclick=()=>openFullView(null, "mobile");
     qs("#btnShuffle").onclick=()=>{seed=(Math.random()*100000)|0;renderPreview();showToast("New variation generated")};
